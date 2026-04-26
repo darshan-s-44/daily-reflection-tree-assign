@@ -1,0 +1,34 @@
+id	parentId	type	text	options	target	signal
+START	null	start	Good evening. Let's reflect on your day.			
+A1_OPEN	START	question	How would you describe today in one word?	Productive|Mixed|Tough|Frustrating		
+A1_D1	A1_OPEN	decision		answer=Productive|Mixed:A1_Q1;answer=Tough|Frustrating:A1_Q2		
+A1_Q1	A1_D1	question	When something went well today, what made it happen?	I prepared well|I adapted quickly|The team supported me|I got lucky			axis1:internal
+A1_Q2	A1_D1	question	When things got difficult, what was your first instinct?	Find what I could control|Wait for help|Feel stuck|Blame the situation			axis1:external
+A1_Q3	A1_Q1	question	When a task slipped, what did you do next?	Replanned quickly|Asked for clarity|Waited for direction|Dropped it			axis1:internal
+A1_Q4	A1_Q2	question	What best describes your response?	Tried another way|Waited for others|Complained internally|Accepted defeat			axis1:external
+A1_R1	A1_Q3	reflection	You noticed your role in the outcome. That is agency. Small choices create momentum.			
+A1_R2	A1_Q4	reflection	Hard days pull attention outward. Still, somewhere in the day, you made a choice. Notice that choice.			
+B1	A1_R1	bridge	Now shift from control to contribution. What did you give today?		A2_OPEN	
+B1B	A1_R2	bridge	Now shift from control to contribution. What did you give today?		A2_OPEN	
+A2_OPEN	null	question	Think about one interaction today. Were you giving or expecting?	I helped someone|I taught someone|I needed support|I felt overlooked		
+A2_D1	A2_OPEN	decision		answer=I helped someone|I taught someone:A2_Q1;answer=I needed support|I felt overlooked:A2_Q2		
+A2_Q1	A2_D1	question	Why did that moment matter?	It helped the team|It improved work|It felt right|I was asked			axis2:contribution
+A2_Q2	A2_D1	question	What frustrated you most?	Lack of recognition|Others were slow|No support|Unclear expectations			axis2:entitlement
+A2_Q3	A2_Q1	question	Would you do it again without credit?	Yes gladly|Yes if needed|Only if noticed|Probably not			axis2:contribution
+A2_Q4	A2_Q2	question	If you could replay it, what changes?	Offer help first|Ask clearly|Wait again|Stay frustrated			axis2:entitlement
+A2_R1	A2_Q3	reflection	Contribution builds trust before recognition arrives. Quiet work often creates the strongest reputation.			
+A2_R2	A2_Q4	reflection	Wanting fairness is human. Contribution begins when we ask: what can I add first?			
+B2	A2_R1	bridge	One more shift: from me to us. Let's widen the frame.		A3_OPEN	
+B2B	A2_R2	bridge	One more shift: from me to us. Let's widen the frame.		A3_OPEN	
+A3_OPEN	null	question	When you think about today's biggest challenge, who comes to mind first?	Just me|My team|A colleague|The customer		
+A3_D1	A3_OPEN	decision		answer=Just me:A3_Q1;answer=My team|A colleague|The customer:A3_Q2		
+A3_Q1	A3_D1	question	What was the hardest part?	My stress|My workload|My recognition|My deadline			axis3:self
+A3_Q2	A3_D1	question	What mattered most in that challenge?	Team outcome|Helping someone|Customer impact|Shared learning			axis3:altro
+A3_Q3	A3_Q1	question	What would reduce that stress tomorrow?	Better planning|Support from team|Clear priorities|Rest			axis3:self
+A3_Q4	A3_Q2	question	What would improve tomorrow most?	Helping earlier|Clearer communication|Customer clarity|Shared ownership			axis3:altro
+A3_R1	A3_Q3	reflection	Self-concern is natural. Meaning grows when your effort connects to something beyond your own pressure.			
+A3_R2	A3_Q4	reflection	You are already thinking beyond yourself. Contribution to others is the most stable source of meaning.			
+SUMMARY	A3_R1	summary	Today you reflected on agency, contribution, and perspective. Tomorrow, ask: where can I choose, contribute, and widen my concern?			
+SUMMARY2	A3_R2	summary	Today you reflected on agency, contribution, and perspective. Tomorrow, ask: where can I choose, contribute, and widen my concern?			
+END	SUMMARY	end	See you tomorrow.			
+END2	SUMMARY2	end	See you tomorrow.			
